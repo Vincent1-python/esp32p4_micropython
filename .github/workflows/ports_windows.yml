@@ -55,7 +55,7 @@ jobs:
     - uses: microsoft/setup-msbuild@v2
       with:
         vs-version: ${{ matrix.vs_version }}
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
       if: matrix.runner == 'windows-2019'
       with:
         python-version: '3.9'
@@ -110,7 +110,7 @@ jobs:
       run:
         shell: msys2 {0}
     steps:
-    - uses: actions/setup-python@v5
+    - uses: actions/setup-python@v6
       # note: can go back to installing mingw-w64-${{ matrix.env }}-python after
       # MSYS2 updates to Python >3.12 (due to settrace compatibility issue)
       with:
